@@ -1,0 +1,13 @@
+<div class="container">
+  <header>
+    <span class="head-title">Post Board</span>
+  </header>
+  <section>
+    <div class="test" *ngFor="let note of noteList">
+      <noteTile [note]="note">
+      </noteTile>
+    </div>
+  </section>
+  <footer>By: Yossi Azoulay &copy;</footer>
+</div>
+
