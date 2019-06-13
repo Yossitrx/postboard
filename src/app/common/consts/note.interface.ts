@@ -4,3 +4,8 @@ export interface Note {
   date: string;
   id: number;
 }
+
+export interface PartialNote {
+  id: number;
+  content: string;
+}

@@ -1,16 +1,10 @@
-<mat-card>
+<mat-card class="note-tile-container" (click)="showNoteContent(note['content'])">
   <mat-card-header>
     <mat-card-title>{{note['name']}}</mat-card-title>
     <mat-card-subtitle>Author name: {{note['authorName']}}</mat-card-subtitle>
     <mat-card-subtitle>Date: {{note['date']}}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-    <p>
-      {{note['content']}}
-    </p>
+    <p> Content: {{note['content']}}</p>
   </mat-card-content>
-  <!--<mat-card-actions>-->
-    <!--<button mat-button-->
-            <!--(click)="removeStockFromPortfolio(stock)">Remove</button>-->
-  <!--</mat-card-actions>-->
 </mat-card>

@@ -1,13 +1,12 @@
 <div class="container">
-  <header>
+  <header class="grid-header-section">
     <span class="head-title">Post Board</span>
   </header>
-  <section>
-    <div class="test" *ngFor="let note of noteList">
+  <section class="grid-body-section">
+    <button class="box-container new-note" mat-button (click)="onCreateNote()">Create new Note</button>
+    <div class="box-container" *ngFor="let note of noteList">
       <noteTile [note]="note">
       </noteTile>
     </div>
   </section>
-  <footer>By: Yossi Azoulay &copy;</footer>
 </div>
-

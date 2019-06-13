@@ -1,53 +1,64 @@
-.container {
-  display: grid;
-  height: 99vh;
-  grid-template-areas:
-  "header header"
-  "section section"
-  "footer";
-  grid-template-rows: 1fr 10fr 1fr;
-
-
-  header {
-    text-align: center;
-    grid-area: header;
+:host ::ng-deep {
+  .container {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-rows: 1fr 10fr;
   }
 
-  section {
-    //text-align: center;
-    grid-area: section;
-    //display: inline-block;
-    //flex-wrap: wrap;
-    //justify-content: space-around;
-
+  .grid-header-section {
+    display: flex;
+    align-content: center;
+    justify-content: center;
   }
 
-  footer {
+  .grid-body-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+  }
+
+  .box-container {
+    padding: 10px;
+  }
+
+  .note-tile-container {
+    max-width: 160px;
+    max-height: 108px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .new-note {
+    width: 182px;
+    height: 127px;
+    margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    grid-area: footer;
+    background-color: #abaaa1;
   }
 
   .head-title {
-    font-size: 20px;
-    font-family: 'Slabo 27px', serif;
+    font-weight: 600;
+    font-size: 26px;
     border-bottom: 1px dashed;
   }
 
-  .test {
-    max-width: 200px;
-  }
-}
+  @media (max-width: 558px) {
+    .box-container {
+      display: flex;
+      justify-content: center;
+      flex-grow: 1;
+    }
 
-@media (min-width: 500px) {
-  .container {
-    grid-template-areas:
-      "header header"
-      "section section"
-      "footer footer";
-    grid-template-rows: 1fr 6fr 1fr;
-    grid-template-columns: 1fr 6fr;
+    .new-note {
+      width: 100%;
+      margin: auto;
+      position: sticky;
+      z-index: 100;
+      top: 0rem;
+    }
   }
 }

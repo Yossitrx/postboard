@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>Post a new note</h1>
+<div mat-dialog-content>
+  <mat-form-field class="form-field">
+    <input matInput
+           (input)="onInputChange($event.target.value)"
+           placeholder="Author Name"
+           [(ngModel)]="data.authorName"
+           [required]="true">
+    <mat-error *ngIf="!data.authorName">
+      Please enter author name
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="form-field">
+    <mat-label>Content</mat-label>
+    <textarea matInput
+              (input)="onTextChange($event.target.value)"
+              [(ngModel)]="data.content"
+              [required]="true"
+              cdkTextareaAutosize
+              cdkAutosizeMinRows="1"
+              cdkAutosizeMaxRows="10"></textarea>
+    <mat-error *ngIf="!data.content || errorHandler">
+      Please enter content
+    </mat-error>
+  </mat-form-field>
+  <div *ngIf="errorHandler" class="error-handler">
+    Please fill all form fields
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancelClick()">Cancel</button>
+  <button mat-button (click)="onValidateNote(data)" cdkFocusInitial>Create new note</button>
+</div>

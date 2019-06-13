@@ -1,0 +1,10 @@
+:host ::ng-deep {
+  .form-field {
+    width: 100%;
+  }
+
+  .error-handler {
+    margin-top: 10px;
+    color: red;
+  }
+}
