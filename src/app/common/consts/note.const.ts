@@ -57,4 +57,5 @@ export const NOTES: Set<Note> = new Set <Note> ([
 ]);
 
 export const NEW_DIALOG_SIZE = '450px';
+
 export const CONTENT_DIALOG_SIZE = '350px';
