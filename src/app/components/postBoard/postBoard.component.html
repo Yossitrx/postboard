@@ -4,7 +4,7 @@
   </header>
   <section class="grid-body-section">
     <button class="box-container new-note" mat-button (click)="onCreateNote()">Create new Note</button>
-    <div class="box-container" *ngFor="let note of noteList">
+    <div class="box-container" [ngClass]="{'result' : noteList.size}" *ngFor="let note of noteList">
       <noteTile [note]="note">
       </noteTile>
     </div>
